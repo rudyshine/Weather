@@ -40,7 +40,7 @@ def getInfo():
         month = str(i) if i > 9 else "0" + str(i)  # 小于10的月份要补0
         save(parse(request(year, month,idNumber)))
         time.sleep(3)
-print('zz')
+
 
 
 if __name__ == '__main__':
