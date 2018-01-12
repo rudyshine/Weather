@@ -35,17 +35,18 @@ def save(list):
 
 def getInfo():
     year = "2016"
-    month = 1
-    for i in range(month, 13):
-        month = str(i) if i > 9 else "0" + str(i)  # 小于10的月份要补0
-        save(parse(request(year, month,idNumber)))
-        time.sleep(3)
+    month = 8
+    # for i in range(month, 13):
+    #     month = str(i) if i > 9 else "0" + str(i)  # 小于10的月份要补0
+    save(parse(request(year, month,idNumber)))
+    time.sleep(3)
 
 
 
 if __name__ == '__main__':
 
-    client = pymongo.MongoClient('172.28.171.13', 27017)   # 连接mongodb,端口27017
+    # client = pymongo.MongoClient('172.28.171.13', 27017)   # 连接mongodb,端口27017
+    client = pymongo.MongoClient('localhost', 27017)   # 连接mongodb,端口27017
     test = client['WeatherData']                              # 创建数据库文件test
     forecast = test['HistoryData2016']                        # 创建表forecast
     inforead = codecs.open("urllist_ID.txt", 'r', 'utf-8')
